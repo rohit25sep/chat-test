@@ -1,4 +1,3 @@
-import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -18,6 +17,7 @@ import {
 } from "./types";
 import { firebase } from "@react-native-firebase/auth";
 import SplashScreen from "react-native-splash-screen";
+import { NavigationContainer } from "@react-navigation/native";
 
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
 const MainStack = createNativeStackNavigator<MainStackParamList>();

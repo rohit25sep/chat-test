@@ -4,7 +4,14 @@
   "description": "React Native Template/Boilerplate",
   "dependencies": {
     "@expo/react-native-action-sheet": "^3.12.0",
+    "@flyerhq/react-native-android-uri-path": "^2.2.2",
+    "@flyerhq/react-native-chat-ui": "^1.4.3",
+    "@react-native-community/eslint-config": "^3.2.0",
     "@react-native-community/netinfo": "9.4.1",
+    "@react-native-firebase/app": "^12.9.3",
+    "@react-native-firebase/auth": "^12.9.3",
+    "@react-native-firebase/firestore": "^12.9.3",
+    "@react-native-firebase/storage": "^12.9.3",
     "@react-native-masked-view/masked-view": "0.2.8",
     "@react-navigation/bottom-tabs": "6.5.7",
     "@react-navigation/native": "6.1.6",
@@ -13,6 +20,8 @@
     "axios": "1.4.0",
     "axios-hooks": "4.0.0",
     "events": "^3.3.0",
+    "faker": "^6.6.6",
+    "fakerator": "^0.3.6",
     "firebase": "^10.5.0",
     "react": "18.2.0",
     "react-localization": "1.0.19",
@@ -25,14 +34,7 @@
     "react-native-reanimated": "3.4.2",
     "react-native-safe-area-context": "4.5.0",
     "react-native-screens": "3.20.0",
-    "react-native-splash-screen": "^3.3.0",
-    "@flyerhq/react-native-android-uri-path": "^2.2.2",
-    "@flyerhq/react-native-chat-ui": "^1.4.3",
-    "@react-native-community/eslint-config": "^3.2.0",
-    "@react-native-firebase/app": "^12.9.3",
-    "@react-native-firebase/auth": "^12.9.3",
-    "@react-native-firebase/firestore": "^12.9.3",
-    "@react-native-firebase/storage": "^12.9.3"
+    "react-native-splash-screen": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -40,7 +42,7 @@
     "@babel/runtime": "^7.20.0",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-  
+    "@faker-js/faker": "^8.2.0",
     "@tsconfig/react-native": "^2.0.2",
     "@types/events": "^3.0.0",
     "@types/react": "^18.0.24",

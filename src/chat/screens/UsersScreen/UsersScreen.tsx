@@ -2,18 +2,14 @@ import {
   COLORS,
   getUserAvatarNameColor,
   getUserName,
-} from '@flyerhq/react-native-chat-ui'
-import {
-  User,
-  useRooms,
-  useUsers,
-} from '@lib'
+} from "@flyerhq/react-native-chat-ui";
+import { User, useRooms, useUsers } from "../../../libs/firebase";
 import {
   CommonActions,
   CompositeNavigationProp,
-} from '@react-navigation/native'
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import React, { useLayoutEffect } from 'react'
+} from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import React, { useLayoutEffect } from "react";
 import {
   Button,
   FlatList,
@@ -23,43 +19,43 @@ import {
   Text,
   TouchableOpacity,
   View,
-} from 'react-native'
-import { RootStackParamList, UsersStackParamList } from 'src/types'
+} from "react-native";
+import { RootStackParamList, UsersStackParamList } from "src/types";
 
 interface Props {
   navigation: CompositeNavigationProp<
-    NativeStackNavigationProp<RootStackParamList, 'UsersStack'>,
+    NativeStackNavigationProp<RootStackParamList, "UsersStack">,
     NativeStackNavigationProp<UsersStackParamList>
-  >
+  >;
 }
 
 const UsersScreen = ({ navigation }: Props) => {
-  const { createRoom } = useRooms()
-  const { users } = useUsers()
+  const { createRoom } = useRooms();
+  const { users } = useUsers();
 
   useLayoutEffect(() => {
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
       navigation.setOptions({
-        headerLeft: () => <Button onPress={navigation.goBack} title='Cancel' />,
-      })
-  })
+        headerLeft: () => <Button onPress={navigation.goBack} title="Cancel" />,
+      });
+  });
 
   const handlePress = async (otherUser: User) => {
-    const room = await createRoom(otherUser)
+    const room = await createRoom(otherUser);
 
     if (room) {
       navigation.dispatch(
         CommonActions.navigate({
-          name: 'Chat',
+          name: "Chat",
           params: { room },
-        })
-      )
+        }),
+      );
     }
-  }
+  };
 
   const renderAvatar = (item: User) => {
-    const color = getUserAvatarNameColor(item, COLORS)
-    const name = getUserName(item)
+    const color = getUserAvatarNameColor(item, COLORS);
+    const name = getUserName(item);
 
     return (
       <ImageBackground
@@ -71,12 +67,12 @@ const UsersScreen = ({ navigation }: Props) => {
       >
         {!item.imageUrl ? (
           <Text style={styles.userInitial}>
-            {name ? name.charAt(0).toUpperCase() : ''}
+            {name ? name.charAt(0).toUpperCase() : ""}
           </Text>
         ) : null}
       </ImageBackground>
-    )
-  }
+    );
+  };
 
   const renderItem = ({ item }: { item: User }) => (
     <TouchableOpacity onPress={() => handlePress(item)}>
@@ -85,7 +81,7 @@ const UsersScreen = ({ navigation }: Props) => {
         <Text>{getUserName(item)}</Text>
       </View>
     </TouchableOpacity>
-  )
+  );
 
   return (
     <FlatList
@@ -99,37 +95,37 @@ const UsersScreen = ({ navigation }: Props) => {
       )}
       renderItem={renderItem}
     />
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   contentContainer: {
     flexGrow: 1,
   },
   listEmptyComponent: {
-    alignItems: 'center',
+    alignItems: "center",
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     marginBottom: 200,
   },
   userContainer: {
-    alignItems: 'center',
-    flexDirection: 'row',
+    alignItems: "center",
+    flexDirection: "row",
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
   userImage: {
-    alignItems: 'center',
+    alignItems: "center",
     borderRadius: 20,
     height: 40,
-    justifyContent: 'center',
+    justifyContent: "center",
     marginRight: 16,
-    overflow: 'hidden',
+    overflow: "hidden",
     width: 40,
   },
   userInitial: {
-    color: 'white',
+    color: "white",
   },
-})
+});
 
-export default UsersScreen
+export default UsersScreen;

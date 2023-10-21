@@ -17,14 +17,12 @@ export const setConfig = (config: FirebaseChatCoreConfig) => {
 
 /** Creates {@link User} in Firebase to store name and avatar used on rooms list */
 export const createUserInFirestore = async (user: User) => {
+  console.log(JSON.stringify(user));
   await firestore().collection(USERS_COLLECTION_NAME).doc(user.id).set({
     createdAt: firestore.FieldValue.serverTimestamp(),
     firstName: user.firstName,
     imageUrl: user.imageUrl,
     lastName: user.lastName,
-    lastSeen: user.lastSeen,
-    metadata: user.metadata,
-    role: user.role,
     updatedAt: firestore.FieldValue.serverTimestamp(),
   })
 }
