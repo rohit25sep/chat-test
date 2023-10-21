@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDVmg9IeA_8Q48uUkBaJAbY3a2RIec-U2Q</string>
+	<string>AIzaSyAnYfrIJSHg62JNE2EpyLrSNYzrtR3biPg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>535735598103</string>
+	<string>637150470743</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>firebase.rn.demo</string>
 	<key>PROJECT_ID</key>
-	<string>react-native-chat-eceed</string>
+	<string>chat-3f07f</string>
 	<key>STORAGE_BUCKET</key>
-	<string>react-native-chat-eceed.appspot.com</string>
+	<string>chat-3f07f.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,8 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:535735598103:ios:fb4d18583871d4b7c37052</string>
-	<key>DATABASE_URL</key>
-	<string>https://react-native-chat-eceed-default-rtdb.firebaseio.com</string>
+	<string>1:637150470743:ios:be729712344210b73f3912</string>
 </dict>
 </plist>

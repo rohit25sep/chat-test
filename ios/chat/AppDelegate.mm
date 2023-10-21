@@ -2,7 +2,6 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import "RNSplashScreen.h"
-#import <Firebase.h>
 
 @implementation AppDelegate
 

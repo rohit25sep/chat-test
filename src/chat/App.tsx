@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
+import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React from "react";
 
 import {
   ChatScreen,
@@ -17,6 +17,7 @@ import {
   UsersStackParamList,
 } from "./types";
 import { firebase } from "@react-native-firebase/auth";
+import SplashScreen from "react-native-splash-screen";
 
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
 const MainStack = createNativeStackNavigator<MainStackParamList>();
@@ -24,17 +25,16 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 const UsersStack = createNativeStackNavigator<UsersStackParamList>();
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDpKlp168biX_Vr54_q1fhAwX3QutUKLpc",
-  authDomain: "test-1f9e2.firebaseapp.com",
-  databaseURL: "https://test-1f9e2-default-rtdb.firebaseio.com",
-  projectId: "test-1f9e2",
-  storageBucket: "test-1f9e2.appspot.com",
-  messagingSenderId: "679443517609",
-  appId: "1:679443517609:web:a99a00b741ccee1b3519b8",
-  measurementId: "G-FLRC1GQ13W",
+  apiKey: "AIzaSyAnYfrIJSHg62JNE2EpyLrSNYzrtR3biPg",
+  //authDomain: "test-1f9e2.firebaseapp.com",
+  databaseURL: "https://chat-3f07f-default-rtdb.firebaseio.com/",
+  projectId: "chat-3f07f",
+  storageBucket: "chat-3f07f.appspot.com",
+  messagingSenderId: "637150470743",
+  appId: "1:637150470743:ios:be729712344210b73f3912",
 };
 
- firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 const AuthStackNavigator = () => {
   return (
     <AuthStack.Navigator>
@@ -53,6 +53,7 @@ const MainStackNavigator = () => {
   );
 };
 
+
 const UsersStackNavigator = () => {
   return (
     <UsersStack.Navigator>
@@ -61,7 +62,13 @@ const UsersStackNavigator = () => {
   );
 };
 
+
 const App = () => {
+  React.useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 1000);
+  }, []);
   return (
     <NavigationContainer>
       <RootStack.Navigator
